@@ -88,7 +88,7 @@ export default function TestimonialsSection() {
 
               {/* Comment */}
               <p className="text-gray-700 mb-6 leading-relaxed text-sm xl:text-base">
-                "{testimonial.comment}"
+                &ldquo;{testimonial.comment}&rdquo;
               </p>
 
               {/* Customer Info */}
@@ -131,7 +131,7 @@ export default function TestimonialsSection() {
 
                   {/* Comment */}
                   <p className="text-gray-700 mb-6 leading-relaxed text-center text-base sm:text-lg">
-                    "{testimonial.comment}"
+                    &ldquo;{testimonial.comment}&rdquo;
                   </p>
 
                   {/* Customer Info */}
