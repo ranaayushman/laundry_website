@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Footer() {
   return (
@@ -8,13 +9,17 @@ export default function Footer() {
           {/* Company Info */}
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-3 mb-4">
-              <div className="bg-blue-600 p-2 rounded-lg">
-                <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zM7 19H5V5h2v14zm4-4h2V9h-2v6zm4 4h2V7h-2v12z"/>
-                </svg>
+              <div className="relative">
+                <Image
+                  src="/img/dailywearLogo.png"
+                  alt="Daily Wear Logo"
+                  width={32}
+                  height={32}
+                  className="w-8 h-8 object-contain"
+                />
               </div>
               <div>
-                <h3 className="text-xl font-bold">CleanWave</h3>
+                <h3 className="text-xl font-bold">Daily Wear</h3>
                 <p className="text-blue-400 text-sm">Laundry Service</p>
               </div>
             </div>
@@ -50,7 +55,7 @@ export default function Footer() {
         {/* Bottom Section */}
         <div className="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm">
-            © 2025 CleanWave Laundry Service. All rights reserved.
+            © 2025 Daily Wear Laundry Service. All rights reserved.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <Link href="#" className="text-gray-400 hover:text-white transition-colors">

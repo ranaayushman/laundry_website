@@ -6,30 +6,30 @@ interface ContactIconsProps {
 }
 
 export default function ContactIcons({ 
-  whatsappNumber = "+1234567890", 
-  email = "contact@laundryservice.com" 
+  whatsappNumber = "+918340764782", 
+  email = "dailywearlaundry@gmail.com" 
 }: ContactIconsProps) {
   
   const handleWhatsAppClick = () => {
-    const message = encodeURIComponent("Hi! I'm interested in your laundry services. Could you please provide more information?");
+    const message = encodeURIComponent("Hi! I'm interested in Daily Wear laundry services. Could you please provide more information about your services and pricing?");
     window.open(`https://wa.me/${whatsappNumber.replace(/[^\d]/g, '')}?text=${message}`, '_blank');
   };
 
   const handleEmailClick = () => {
-    window.open(`mailto:${email}?subject=Laundry Service Inquiry`, '_blank');
+    window.open(`mailto:${email}?subject=Daily Wear Laundry Service Inquiry`, '_blank');
   };
 
   return (
-    <div className="fixed bottom-6 right-6 flex flex-col gap-4 z-50">
+    <div className="fixed bottom-4 sm:bottom-6 right-4 sm:right-6 flex flex-col gap-3 sm:gap-4 z-50">
       {/* WhatsApp Icon */}
       <button
         onClick={handleWhatsAppClick}
-        className="group bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 animate-pulse hover:animate-none"
+        className="group bg-green-500 hover:bg-green-600 text-white p-3 sm:p-4 rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 animate-pulse hover:animate-none"
         aria-label="Contact us on WhatsApp"
         title="Chat with us on WhatsApp"
       >
         <svg 
-          className="w-6 h-6 group-hover:scale-110 transition-transform duration-300" 
+          className="w-5 h-5 sm:w-6 sm:h-6 group-hover:scale-110 transition-transform duration-300" 
           fill="currentColor" 
           viewBox="0 0 24 24"
         >
@@ -40,12 +40,12 @@ export default function ContactIcons({
       {/* Email Icon */}
       <button
         onClick={handleEmailClick}
-        className="group bg-blue-600 hover:bg-blue-700 text-white p-4 rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
+        className="group bg-blue-600 hover:bg-blue-700 text-white p-3 sm:p-4 rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
         aria-label="Send us an email"
         title="Send us an email"
       >
         <svg 
-          className="w-6 h-6 group-hover:scale-110 transition-transform duration-300" 
+          className="w-5 h-5 sm:w-6 sm:h-6 group-hover:scale-110 transition-transform duration-300" 
           fill="none" 
           stroke="currentColor" 
           viewBox="0 0 24 24"
@@ -59,8 +59,8 @@ export default function ContactIcons({
         </svg>
       </button>
 
-      {/* Contact Info Tooltip */}
-      <div className="hidden group-hover:block absolute right-full mr-4 bottom-0 bg-gray-800 text-white px-3 py-2 rounded-lg text-sm whitespace-nowrap">
+      {/* Contact Info Tooltip - Hidden on mobile for better UX */}
+      <div className="hidden lg:group-hover:block absolute right-full mr-4 bottom-0 bg-gray-800 text-white px-3 py-2 rounded-lg text-sm whitespace-nowrap">
         <div className="flex flex-col gap-1">
           <span className="text-green-400">📱 {whatsappNumber}</span>
           <span className="text-blue-400">📧 {email}</span>
