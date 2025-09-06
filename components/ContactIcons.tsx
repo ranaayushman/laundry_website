@@ -20,11 +20,11 @@ export default function ContactIcons({
   };
 
   return (
-    <div className="fixed bottom-4 sm:bottom-6 right-4 sm:right-6 flex flex-col gap-3 sm:gap-4 z-50">
+    <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 flex flex-col gap-3 sm:gap-4 z-[9999] pointer-events-none">
       {/* WhatsApp Icon */}
       <button
         onClick={handleWhatsAppClick}
-        className="group bg-green-500 hover:bg-green-600 text-white p-3 sm:p-4 rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 animate-pulse hover:animate-none"
+        className="pointer-events-auto group bg-green-500 hover:bg-green-600 text-white p-3 sm:p-4 rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 animate-pulse hover:animate-none ml-auto"
         aria-label="Contact us on WhatsApp"
         title="Chat with us on WhatsApp"
       >
@@ -40,7 +40,7 @@ export default function ContactIcons({
       {/* Email Icon */}
       <button
         onClick={handleEmailClick}
-        className="group bg-blue-600 hover:bg-blue-700 text-white p-3 sm:p-4 rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
+        className="pointer-events-auto group bg-blue-600 hover:bg-blue-700 text-white p-3 sm:p-4 rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 ml-auto"
         aria-label="Send us an email"
         title="Send us an email"
       >
@@ -60,7 +60,7 @@ export default function ContactIcons({
       </button>
 
       {/* Contact Info Tooltip - Hidden on mobile for better UX */}
-      <div className="hidden lg:group-hover:block absolute right-full mr-4 bottom-0 bg-gray-800 text-white px-3 py-2 rounded-lg text-sm whitespace-nowrap">
+      <div className="hidden lg:group-hover:block absolute right-full mr-4 bottom-0 bg-gray-800 text-white px-3 py-2 rounded-lg text-sm whitespace-nowrap pointer-events-auto">
         <div className="flex flex-col gap-1">
           <span className="text-green-400">📱 {whatsappNumber}</span>
           <span className="text-blue-400">📧 {email}</span>

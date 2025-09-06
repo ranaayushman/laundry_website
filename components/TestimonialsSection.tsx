@@ -70,7 +70,7 @@ export default function TestimonialsSection() {
             What Our Customers Say
           </h2>
           <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Don't just take our word for it. Here's what our satisfied customers have to say about Daily Wear laundry service.
+            Don&apos;t just take our word for it. Here&apos;s what our satisfied customers have to say about Daily Wear laundry service.
           </p>
         </div>
 
