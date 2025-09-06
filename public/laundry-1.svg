@@ -1,0 +1,8 @@
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="600" fill="#3B82F6"/>
+  <rect x="100" y="150" width="600" height="300" fill="#FFFFFF" fill-opacity="0.1" rx="20"/>
+  <circle cx="400" cy="300" r="80" fill="#FFFFFF" fill-opacity="0.2"/>
+  <rect x="340" y="240" width="120" height="120" fill="#FFFFFF" fill-opacity="0.3" rx="10"/>
+  <text x="400" y="480" text-anchor="middle" fill="#FFFFFF" font-size="32" font-family="Arial, sans-serif" font-weight="bold">Premium Laundry Service</text>
+  <text x="400" y="520" text-anchor="middle" fill="#E0F2FE" font-size="18" font-family="Arial, sans-serif">Professional washing and cleaning services</text>
+</svg>
