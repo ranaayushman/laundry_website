@@ -57,6 +57,85 @@ export default function Home() {
         {/* Services Section */}
         <ServicesSection />
 
+        {/* About Section */}
+        <section id="about" className="py-12 sm:py-16 lg:py-20 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
+              <div>
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
+                  About Daily Wear
+                </h2>
+                <p className="text-lg sm:text-xl text-gray-600 mb-6 sm:mb-8 leading-relaxed">
+                  With over 5 years of experience in the laundry and dry cleaning industry, 
+                  Daily Wear has become a trusted name for quality garment care services.
+                </p>
+                <div className="space-y-4 sm:space-y-6">
+                  <div className="flex items-start space-x-3">
+                    <div className="bg-blue-100 p-2 rounded-full flex-shrink-0">
+                      <svg className="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-gray-900 mb-1">Quality Assurance</h3>
+                      <p className="text-gray-600 text-sm sm:text-base">Every garment is carefully inspected and treated with premium products</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <div className="bg-blue-100 p-2 rounded-full flex-shrink-0">
+                      <svg className="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-gray-900 mb-1">Eco-Friendly Approach</h3>
+                      <p className="text-gray-600 text-sm sm:text-base">We use environmentally safe cleaning products and processes</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <div className="bg-blue-100 p-2 rounded-full flex-shrink-0">
+                      <svg className="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-gray-900 mb-1">Customer Satisfaction</h3>
+                      <p className="text-gray-600 text-sm sm:text-base">Our priority is your satisfaction with every service we provide</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="mt-8 lg:mt-0">
+                <div className="bg-blue-50 rounded-2xl p-6 sm:p-8">
+                  <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">Why Choose Us?</h3>
+                  <div className="space-y-4">
+                    <div className="flex items-center justify-between p-3 bg-white rounded-lg">
+                      <span className="text-gray-700 text-sm sm:text-base">Professional Staff</span>
+                      <span className="text-blue-600 font-semibold">✓</span>
+                    </div>
+                    <div className="flex items-center justify-between p-3 bg-white rounded-lg">
+                      <span className="text-gray-700 text-sm sm:text-base">Modern Equipment</span>
+                      <span className="text-blue-600 font-semibold">✓</span>
+                    </div>
+                    <div className="flex items-center justify-between p-3 bg-white rounded-lg">
+                      <span className="text-gray-700 text-sm sm:text-base">Affordable Pricing</span>
+                      <span className="text-blue-600 font-semibold">✓</span>
+                    </div>
+                    <div className="flex items-center justify-between p-3 bg-white rounded-lg">
+                      <span className="text-gray-700 text-sm sm:text-base">Quick Turnaround</span>
+                      <span className="text-blue-600 font-semibold">✓</span>
+                    </div>
+                    <div className="flex items-center justify-between p-3 bg-white rounded-lg">
+                      <span className="text-gray-700 text-sm sm:text-base">24/7 Support</span>
+                      <span className="text-blue-600 font-semibold">✓</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Testimonials Section */}
         <TestimonialsSection />
 
@@ -106,14 +185,14 @@ export default function Home() {
         </section>
       </main>
 
-      {/* Footer */}
-      <Footer />
-
       {/* Contact Icons - Fixed position */}
       <ContactIcons 
         whatsappNumber="+918340764782" 
         email="dailywearlaundry@gmail.com" 
       />
+
+      {/* Footer */}
+      <Footer />
     </div>
   );
 }

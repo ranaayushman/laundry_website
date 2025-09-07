@@ -104,7 +104,7 @@ export default function Carousel() {
       {/* Navigation Arrows */}
       <button
         onClick={prevSlide}
-        className="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-90 hover:bg-opacity-100 text-gray-800 p-2 sm:p-4 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-110 border border-gray-200"
+        className="absolute left-1 sm:left-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-90 hover:bg-opacity-100 text-gray-800 p-1.5 sm:p-4 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform-gpu border border-gray-200"
         aria-label="Previous slide"
       >
         <svg className="w-4 h-4 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -114,7 +114,7 @@ export default function Carousel() {
       
       <button
         onClick={nextSlide}
-        className="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-90 hover:bg-opacity-100 text-gray-800 p-2 sm:p-4 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-110 border border-gray-200"
+        className="absolute right-1 sm:right-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-90 hover:bg-opacity-100 text-gray-800 p-1.5 sm:p-4 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform-gpu border border-gray-200"
         aria-label="Next slide"
       >
         <svg className="w-4 h-4 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -128,10 +128,10 @@ export default function Carousel() {
           <button
             key={index}
             onClick={() => goToSlide(index)}
-            className={`w-3 h-3 sm:w-4 sm:h-4 rounded-full transition-all duration-300 border-2 border-white ${
+            className={`w-3 h-3 sm:w-4 sm:h-4 rounded-full transition-all duration-300 border-2 border-white transform-gpu ${
               index === currentSlide 
-                ? 'bg-white scale-110 shadow-lg' 
-                : 'bg-white bg-opacity-60 hover:bg-opacity-90 hover:scale-105'
+                ? 'bg-white shadow-lg' 
+                : 'bg-white bg-opacity-60 hover:bg-opacity-90'
             }`}
             aria-label={`Go to slide ${index + 1}`}
           />
