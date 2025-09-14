@@ -4,12 +4,12 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ServicesSection from '@/components/ServicesSection';
 import TestimonialsSection from '@/components/TestimonialsSection';
+import ScheduleSection from '@/components/ScheduleSection';
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-white">
-      {/* Header */}
-      <Header />
+
       
       {/* Main Content */}
       <main>
@@ -19,6 +19,9 @@ export default function Home() {
             <Carousel />
           </div>
         </section>
+
+        {/* Schedule Section (Premium Contact/Schedule) */}
+        <ScheduleSection />
 
         {/* Welcome Section */}
         <section className="py-12 sm:py-16 lg:py-20 bg-white">
@@ -192,7 +195,6 @@ export default function Home() {
       />
 
       {/* Footer */}
-      <Footer />
     </div>
   );
 }
