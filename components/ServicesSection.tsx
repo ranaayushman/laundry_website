@@ -29,13 +29,13 @@ export default function ServicesSection() {
           </div>
           {/* Right: Feature Comparison */}
           <div className="flex-1 w-full max-w-lg">
-            <div className="flex items-end justify-end mb-4">
-              <button className="bg-blue-600 text-white px-6 py-2 rounded-l-md font-semibold shadow-md">
+            <div className="flex items-center justify-end mb-6">
+              <div className="bg-blue-600 text-white px-6 py-2 rounded-l-md font-semibold shadow-md">
                 Daily Wear
-              </button>
-              <button className="bg-gray-400 text-white px-6 py-2 rounded-r-md font-semibold">
+              </div>
+              <div className="bg-gray-400 text-white px-6 py-2 rounded-r-md font-semibold">
                 Others
-              </button>
+              </div>
             </div>
             <ul className="space-y-4 text-base sm:text-lg">
               {[
