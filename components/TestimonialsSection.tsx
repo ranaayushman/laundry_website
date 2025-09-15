@@ -1,51 +1,68 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef, TouchEvent } from 'react';
+import { Testimonial, testimonials } from '../app/constants';
 
-interface Testimonial {
-  id: number;
-  name: string;
-  rating: number;
-  comment: string;
-  location: string;
-  service: string;
-}
-
-const testimonials: Testimonial[] = [
-  {
-    id: 1,
-    name: "Dhanraj Yadav",
-    rating: 5,
-    comment: "Excellent service! My clothes always come back fresh and perfectly cleaned. The pickup and delivery service is very convenient. Highly recommend Daily Wear for anyone looking for reliable laundry service.",
-    location: "Sector 15, Noida",
-    service: "Washing & Folding"
-  },
-  {
-    id: 2,
-    name: "Tanmay",
-    rating: 5,
-    comment: "Been using Daily Wear for over 6 months now. Their dry cleaning service is outstanding, especially for my formal shirts and suits. Professional staff and always on time with deliveries.",
-    location: "Laxmi Nagar, Delhi",
-    service: "Dry Cleaning"
-  },
-  {
-    id: 3,
-    name: "Rishu",
-    rating: 5,
-    comment: "Amazing quality and very affordable prices. The same-day service saved me multiple times when I needed clothes urgently. Great customer service and eco-friendly products. Will definitely continue using their service!",
-    location: "Vaishali, Ghaziabad",
-    service: "Express Service"
-  }
-];
 
 export default function TestimonialsSection() {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
+  const timerRef = useRef<NodeJS.Timeout | null>(null);
 
-  useEffect(() => {
-    const timer = setInterval(() => {
+  // Minimum swipe distance (in px)
+  const minSwipeDistance = 50;
+
+  // Handle touch start
+  const onTouchStart = (e: TouchEvent) => {
+    setTouchEnd(null); // Reset touchEnd
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  // Handle touch move
+  const onTouchMove = (e: TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  // Handle touch end
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    
+    // Calculate distance of swipe
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+    
+    // Reset timer to prevent conflicts with auto-rotation
+    if (timerRef.current) {
+      clearInterval(timerRef.current);
+    }
+
+    // Handle swipe direction
+    if (isLeftSwipe) {
+      // Swipe left - go to next testimonial
+      setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
+    } else if (isRightSwipe) {
+      // Swipe right - go to previous testimonial
+      setCurrentTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+    }
+    
+    // Restart auto-rotation timer
+    startAutoRotation();
+  };
+
+  // Start auto-rotation timer
+  const startAutoRotation = () => {
+    timerRef.current = setInterval(() => {
       setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
     }, 6000);
-    return () => clearInterval(timer);
+  };
+
+  useEffect(() => {
+    startAutoRotation();
+    return () => {
+      if (timerRef.current) clearInterval(timerRef.current);
+    };
   }, []);
 
   const renderStars = (rating: number) => {
@@ -113,7 +130,12 @@ export default function TestimonialsSection() {
 
         {/* Testimonials Carousel - Mobile & Tablet */}
         <div className="lg:hidden">
-          <div className="relative">
+          <div 
+            className="relative touch-pan-y"
+            onTouchStart={onTouchStart}
+            onTouchMove={onTouchMove}
+            onTouchEnd={onTouchEnd}
+          >
             {testimonials.map((testimonial, index) => (
               <div
                 key={testimonial.id}
@@ -154,7 +176,14 @@ export default function TestimonialsSection() {
             {testimonials.map((_, index) => (
               <button
                 key={index}
-                onClick={() => setCurrentTestimonial(index)}
+                onClick={() => {
+                  // Reset timer when manually changing slides
+                  if (timerRef.current) {
+                    clearInterval(timerRef.current);
+                  }
+                  setCurrentTestimonial(index);
+                  startAutoRotation();
+                }}
                 className={`w-3 h-3 rounded-full transition-all duration-300 ${
                   index === currentTestimonial 
                     ? 'bg-blue-600 scale-110' 
@@ -164,6 +193,7 @@ export default function TestimonialsSection() {
               />
             ))}
           </div>
+
         </div>
 
         {/* Stats Section */}
