@@ -8,7 +8,9 @@ export default function ScheduleSection() {
         <div className="flex-1 w-full max-w-lg">
           <h2 className="text-center md:text-left text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-900 mb-2 leading-tight">
             Looking For The <br className="hidden md:block" />
-            <span className="font-normal">&quot;BEST DRY CLEANERS IN CITY?&quot;</span>
+            <span className="font-normal">
+              &quot;BEST DRY CLEANERS IN CITY?&quot;
+            </span>
           </h2>
           <h3 className="text-center md:text-left text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-4 mt-2">
             WELCOME TO DAILY WEAR
