@@ -13,13 +13,13 @@ export default function Home() {
       
       {/* Main Content */}
       <main>
-        {/* Hero Section with Carousel */}
+        {/* Hero Section with Carousel 
         <section id="home" className="px-4 sm:px-6 lg:px-8 py-4 sm:py-6 lg:py-8">
           <div className="max-w-7xl mx-auto">
             <Carousel />
           </div>
         </section>
-
+          */}
         {/* Schedule Section (Premium Contact/Schedule) */}
         <ScheduleSection />
 
