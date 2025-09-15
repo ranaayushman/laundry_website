@@ -37,105 +37,129 @@ export default function ServicesSection() {
                 Others
               </div>
             </div>
-            <ul className="space-y-4 text-base sm:text-lg">
-              {[
-                {
-                  label: "100% Garment Care Label Adherence",
-                  us: true,
-                  others: false,
-                },
-                {
-                  label: "Color Bleeding Proof Process",
-                  us: true,
-                  others: false,
-                },
-                { label: "Zero Shrinkage Guaranteed", us: true, others: false },
-                { label: "99% Stain Removal Promise", us: true, others: false },
-                {
-                  label: "Color Restoration For Old Dark Garments",
-                  us: true,
-                  others: false,
-                },
-                {
-                  label: "Whiter Technology For 3 Shades Brighter Whites",
-                  us: true,
-                  others: false,
-                },
-              ].map((item, idx) => (
-                <li
-                  key={idx}
-                  className="flex items-center justify-between border-b border-gray-100 pb-2 last:border-b-0"
-                >
-                  <span className="flex items-center gap-2 font-medium">
-                    {/* Icon */}
-                    <svg
-                      className="w-5 h-5 text-emerald-400"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                    {item.label}
-                  </span>
-                  <span className="flex items-center gap-[100px]">
-                    <svg
-                      className={`w-5 h-5 ${
-                        item.us ? "text-emerald-500" : "text-red-400"
-                      }`}
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      {item.us ? (
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M5 13l4 4L19 7"
-                        />
-                      ) : (
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M6 18L18 6M6 6l12 12"
-                        />
-                      )}
-                    </svg>
-                    <svg
-                      className={`w-5 h-5 ${
-                        item.others ? "text-emerald-500" : "text-red-400"
-                      }`}
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      {item.others ? (
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M5 13l4 4L19 7"
-                        />
-                      ) : (
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M6 18L18 6M6 6l12 12"
-                        />
-                      )}
-                    </svg>
-                  </span>
-                </li>
-              ))}
-            </ul>
+            <table className="w-full border-collapse">
+              <thead>
+                <tr className="sr-only">
+                  <th scope="col">Feature</th>
+                  <th scope="col">Daily Wear</th>
+                  <th scope="col">Others</th>
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  {
+                    label: "100% Garment Care Label Adherence",
+                    us: true,
+                    others: false,
+                  },
+                  {
+                    label: "Color Bleeding Proof Process",
+                    us: true,
+                    others: false,
+                  },
+                  {
+                    label: "Zero Shrinkage Guaranteed",
+                    us: true,
+                    others: false,
+                  },
+                  {
+                    label: "99% Stain Removal Promise",
+                    us: true,
+                    others: false,
+                  },
+                  {
+                    label: "Color Restoration For Old Dark Garments",
+                    us: true,
+                    others: false,
+                  },
+                  {
+                    label: "Whiter Technology For 3 Shades Brighter Whites",
+                    us: true,
+                    others: false,
+                  },
+                ].map((item, idx) => (
+                  <tr
+                    key={idx}
+                    className="border-b border-gray-100 last:border-b-0"
+                  >
+                    <td className="py-3 pr-2 text-left">
+                      <div className="flex items-center gap-2 font-medium">
+                        <svg
+                          className="w-5 h-5 text-blue-500 flex-shrink-0"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M5 13l4 4L19 7"
+                          />
+                        </svg>
+                        {item.label}
+                      </div>
+                    </td>
+                    <td className="py-3 px-8 text-center w-16">
+                      <div className={`w-6 h-6 rounded-full mx-auto flex items-center justify-center ${
+                        item.us ? "bg-green-500" : "bg-red-500"
+                      }`}>
+                        <svg
+                          className="w-4 h-4 text-white"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          {item.us ? (
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M5 13l4 4L19 7"
+                            />
+                          ) : (
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M6 18L18 6M6 6l12 12"
+                            />
+                          )}
+                        </svg>
+                      </div>
+                    </td>
+                    <td className="py-3 px-8 text-center w-16">
+                      <div className={`w-6 h-6 rounded-full mx-auto flex items-center justify-center ${
+                        item.others ? "bg-green-500" : "bg-red-500"
+                      }`}>
+                        <svg
+                          className="w-4 h-4 text-white"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          {item.others ? (
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M5 13l4 4L19 7"
+                            />
+                          ) : (
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M6 18L18 6M6 6l12 12"
+                            />
+                          )}
+                        </svg>
+                      </div>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         </div>
 
