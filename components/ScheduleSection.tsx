@@ -54,7 +54,7 @@ export default function ScheduleSection() {
         {/* Right: Image */}
         <div className="flex-1 flex justify-center items-center w-full max-w-xs md:max-w-sm">
           <Image
-            src="/img/laundry-man.png"
+            src="/img/dailwear.jpeg"
             alt="Laundry professional holding suit"
             width={320}
             height={320}
